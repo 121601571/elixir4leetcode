@@ -11,7 +11,7 @@ defmodule Solution0009 do
 
   defp checkOK(str1) do
     if String.length(str1) <= 1 do
-       true
+      true
     else
       if String.at(str1, 0) != String.at(str1, -1) do
         false
@@ -20,7 +20,6 @@ defmodule Solution0009 do
       end
     end
   end
-
 end
 
 IO.inspect(Solution0009.is_palindrome(12321))
