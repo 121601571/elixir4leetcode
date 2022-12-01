@@ -15,6 +15,7 @@ defmodule Solution1081 do
   defp getAns(s, curL, pattern, n) do
     cur1 = String.slice(s, curL..(curL + n - 1))
     IO.inspect(cur1)
+
     if String.length(cur1) < curL do
       ""
     else

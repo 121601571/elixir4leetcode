@@ -3,15 +3,17 @@ defmodule SolutionOffer099 do
   def min_path_sum(grid) do
     OTPKV.start_link()
     OTPKV.clear()
-    for x <-0..length(grid) do
-      for y <-0..length(Enum.at(grid,0)) do
-        curv1 = OTPKV.getK({x-1,y})
-        curv2 = OTPKV.getK({x, y-1})
-        curV = max(curv1, curv2) + Enum.at( Enum.at(grid, x), y)
-        OTPKV.setK({x,y}, curV)
+
+    for x <- 0..length(grid) do
+      for y <- 0..length(Enum.at(grid, 0)) do
+        curv1 = OTPKV.getK({x - 1, y})
+        curv2 = OTPKV.getK({x, y - 1})
+        curV = max(curv1, curv2) + Enum.at(Enum.at(grid, x), y)
+        OTPKV.setK({x, y}, curV)
       end
     end
-    OTPKV.getK({length(grid)-1, length(Enum.at(grid,0))-1})
+
+    OTPKV.getK({length(grid) - 1, length(Enum.at(grid, 0)) - 1})
   end
 end
 

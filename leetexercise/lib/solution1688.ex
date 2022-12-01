@@ -4,12 +4,11 @@ defmodule Solution1688 do
     0
   end
 
-  def number_of_matches(n) when rem(n,2) == 0 do
-    div(n,2) + number_of_matches(div(n,2))
+  def number_of_matches(n) when rem(n, 2) == 0 do
+    div(n, 2) + number_of_matches(div(n, 2))
   end
 
-  def number_of_matches(n) when rem(n,2) == 1 do
-    div(n-1,2) + number_of_matches(div(n+1,2))
+  def number_of_matches(n) when rem(n, 2) == 1 do
+    div(n - 1, 2) + number_of_matches(div(n + 1, 2))
   end
-
 end
